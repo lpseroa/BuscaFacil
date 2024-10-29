@@ -28,209 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_arquivos = new System.Windows.Forms.Label();
-            this.lbl_arquivos_filtrados = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBusca));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.TxtEscolheDir = new System.Windows.Forms.TextBox();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.txb_textoBusca = new System.Windows.Forms.TextBox();
-            this.btnBuscaTexto = new System.Windows.Forms.Button();
-            this.numProf = new System.Windows.Forms.NumericUpDown();
-            this.lblProf = new System.Windows.Forms.Label();
             this.lsbMostraDir = new System.Windows.Forms.ListBox();
-            this.lsbMostraArquivos = new System.Windows.Forms.ListBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.Menu1 = new System.Windows.Forms.MenuStrip();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorTxtMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorDocMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorXlsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizaPDFMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizaImagemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chkAcesso = new System.Windows.Forms.CheckBox();
-            this.chkCriacao = new System.Windows.Forms.CheckBox();
-            this.dtm_acesso = new System.Windows.Forms.DateTimePicker();
-            this.dtm_criacao = new System.Windows.Forms.DateTimePicker();
-            this.btnDesfazer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numProf)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.Aviso = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblAlteracao = new System.Windows.Forms.Label();
+            this.lblProf = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxbFiltroNome = new System.Windows.Forms.TextBox();
+            this.TxbFiltroTexto = new System.Windows.Forms.TextBox();
+            this.TxbPastaBase = new System.Windows.Forms.TextBox();
+            this.NumProf = new System.Windows.Forms.NumericUpDown();
+            this.BtnBuscaTexto = new System.Windows.Forms.Button();
+            this.btnRetorno = new System.Windows.Forms.Button();
+            this.DtmAcesso = new System.Windows.Forms.DateTimePicker();
+            this.DtmCriacao = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnResetNome = new System.Windows.Forms.Button();
+            this.btnResetConteudo = new System.Windows.Forms.Button();
+            this.process1 = new System.Diagnostics.Process();
+            this.Menu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumProf)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "DIRETÓRIOS";
-            this.label2.UseWaitCursor = true;
-            // 
-            // lbl_arquivos
-            // 
-            this.lbl_arquivos.AutoSize = true;
-            this.lbl_arquivos.Location = new System.Drawing.Point(577, 64);
-            this.lbl_arquivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_arquivos.Name = "lbl_arquivos";
-            this.lbl_arquivos.Size = new System.Drawing.Size(70, 13);
-            this.lbl_arquivos.TabIndex = 8;
-            this.lbl_arquivos.Text = "ARQUIVOS";
-            this.lbl_arquivos.UseWaitCursor = true;
-            // 
-            // lbl_arquivos_filtrados
-            // 
-            this.lbl_arquivos_filtrados.AutoSize = true;
-            this.lbl_arquivos_filtrados.Location = new System.Drawing.Point(572, 64);
-            this.lbl_arquivos_filtrados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_arquivos_filtrados.Name = "lbl_arquivos_filtrados";
-            this.lbl_arquivos_filtrados.Size = new System.Drawing.Size(139, 13);
-            this.lbl_arquivos_filtrados.TabIndex = 10;
-            this.lbl_arquivos_filtrados.Text = "ARQUIVOS FILTRADOS";
-            this.lbl_arquivos_filtrados.UseWaitCursor = true;
-            // 
-            // TxtEscolheDir
-            // 
-            this.TxtEscolheDir.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TxtEscolheDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtEscolheDir.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEscolheDir.Location = new System.Drawing.Point(15, 27);
-            this.TxtEscolheDir.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtEscolheDir.MaxLength = 100;
-            this.TxtEscolheDir.Name = "TxtEscolheDir";
-            this.TxtEscolheDir.Size = new System.Drawing.Size(310, 21);
-            this.TxtEscolheDir.TabIndex = 1;
-            this.TxtEscolheDir.Text = "Pasta Base de Busca";
-            this.TxtEscolheDir.UseWaitCursor = true;
-            this.TxtEscolheDir.Leave += new System.EventHandler(this.TxtEscolheDir_Leave);
-            this.TxtEscolheDir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TxtEscolheDir_MouseDown);
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.Location = new System.Drawing.Point(359, 29);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(127, 21);
-            this.txtFiltro.TabIndex = 9;
-            this.txtFiltro.Text = "Filto Nome Arquivo";
-            this.txtFiltro.UseWaitCursor = true;
-            // 
-            // txb_textoBusca
-            // 
-            this.txb_textoBusca.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txb_textoBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_textoBusca.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_textoBusca.Location = new System.Drawing.Point(737, 29);
-            this.txb_textoBusca.Margin = new System.Windows.Forms.Padding(2);
-            this.txb_textoBusca.Name = "txb_textoBusca";
-            this.txb_textoBusca.Size = new System.Drawing.Size(144, 21);
-            this.txb_textoBusca.TabIndex = 27;
-            this.txb_textoBusca.Text = "Texto a ser Buscado";
-            this.txb_textoBusca.UseWaitCursor = true;
-            // 
-            // btnBuscaTexto
-            // 
-            this.btnBuscaTexto.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnBuscaTexto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBuscaTexto.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.btnBuscaTexto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBuscaTexto.FlatAppearance.BorderSize = 3;
-            this.btnBuscaTexto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnBuscaTexto.Font = new System.Drawing.Font("Verdana", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscaTexto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscaTexto.Location = new System.Drawing.Point(899, 32);
-            this.btnBuscaTexto.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscaTexto.Name = "btnBuscaTexto";
-            this.btnBuscaTexto.Size = new System.Drawing.Size(45, 45);
-            this.btnBuscaTexto.TabIndex = 28;
-            this.btnBuscaTexto.Text = "BUSCA TEXTO";
-            this.btnBuscaTexto.UseMnemonic = false;
-            this.btnBuscaTexto.UseVisualStyleBackColor = false;
-            this.btnBuscaTexto.UseWaitCursor = true;
-            this.btnBuscaTexto.Click += new System.EventHandler(this.BtnBuscaTexto_Click);
-            // 
-            // numProf
-            // 
-            this.numProf.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numProf.Location = new System.Drawing.Point(801, 55);
-            this.numProf.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numProf.Name = "numProf";
-            this.numProf.Size = new System.Drawing.Size(80, 22);
-            this.numProf.TabIndex = 29;
-            this.numProf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numProf.UseWaitCursor = true;
-            this.numProf.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblProf
-            // 
-            this.lblProf.AutoSize = true;
-            this.lblProf.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProf.Location = new System.Drawing.Point(714, 64);
-            this.lblProf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblProf.Name = "lblProf";
-            this.lblProf.Size = new System.Drawing.Size(82, 13);
-            this.lblProf.TabIndex = 30;
-            this.lblProf.Text = "Profundidade";
-            this.lblProf.UseWaitCursor = true;
             // 
             // lsbMostraDir
             // 
+            this.lsbMostraDir.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Italic);
             this.lsbMostraDir.FormattingEnabled = true;
-            this.lsbMostraDir.Location = new System.Drawing.Point(12, 84);
+            this.lsbMostraDir.ItemHeight = 22;
+            this.lsbMostraDir.Location = new System.Drawing.Point(18, 148);
             this.lsbMostraDir.Name = "lsbMostraDir";
-            this.lsbMostraDir.Size = new System.Drawing.Size(551, 342);
+            this.lsbMostraDir.Size = new System.Drawing.Size(880, 422);
             this.lsbMostraDir.TabIndex = 35;
-            this.lsbMostraDir.UseWaitCursor = true;
             this.lsbMostraDir.SelectedIndexChanged += new System.EventHandler(this.lsbMostraDir_SelectedIndexChanged);
             // 
-            // lsbMostraArquivos
+            // Menu1
             // 
-            this.lsbMostraArquivos.FormattingEnabled = true;
-            this.lsbMostraArquivos.Location = new System.Drawing.Point(575, 84);
-            this.lsbMostraArquivos.Name = "lsbMostraArquivos";
-            this.lsbMostraArquivos.Size = new System.Drawing.Size(546, 342);
-            this.lsbMostraArquivos.TabIndex = 36;
-            this.lsbMostraArquivos.UseWaitCursor = true;
-            this.lsbMostraArquivos.SelectedIndexChanged += new System.EventHandler(this.lsbMostraArquivos_SelectedIndexChanged);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.Menu1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.Menu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuraçõesToolStripMenuItem,
             this.sobreToolStripMenuItem,
             this.sairToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1156, 24);
-            this.menuStrip1.TabIndex = 37;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.UseWaitCursor = true;
+            this.Menu1.Location = new System.Drawing.Point(5, 5);
+            this.Menu1.Name = "Menu1";
+            this.Menu1.Size = new System.Drawing.Size(1359, 54);
+            this.Menu1.TabIndex = 37;
+            this.Menu1.Text = "menuStrip1";
             // 
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editorToolStripMenuItem});
+            this.editorTxtMenuItem,
+            this.editorDocMenuItem,
+            this.editorXlsMenuItem,
+            this.visualizaPDFMenuItem,
+            this.visualizaImagemMenuItem});
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(142, 50);
             this.configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
-            // editorToolStripMenuItem
+            // editorTxtMenuItem
             // 
-            this.editorToolStripMenuItem.Name = "editorToolStripMenuItem";
-            this.editorToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.editorToolStripMenuItem.Text = "Editor";
-            this.editorToolStripMenuItem.Click += new System.EventHandler(this.editorToolStripMenuItem_Click);
+            this.editorTxtMenuItem.Name = "editorTxtMenuItem";
+            this.editorTxtMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.editorTxtMenuItem.Text = "Editor Texto";
+            this.editorTxtMenuItem.Click += new System.EventHandler(this.editorTxtMenuItem_Click);
+            // 
+            // editorDocMenuItem
+            // 
+            this.editorDocMenuItem.Name = "editorDocMenuItem";
+            this.editorDocMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.editorDocMenuItem.Text = "Editor DOC";
+            this.editorDocMenuItem.Click += new System.EventHandler(this.editorDocMenuItem_Click);
+            // 
+            // editorXlsMenuItem
+            // 
+            this.editorXlsMenuItem.Name = "editorXlsMenuItem";
+            this.editorXlsMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.editorXlsMenuItem.Text = "Editor XLS";
+            this.editorXlsMenuItem.Click += new System.EventHandler(this.editorXlsMenuItem_Click);
+            // 
+            // visualizaPDFMenuItem
+            // 
+            this.visualizaPDFMenuItem.Name = "visualizaPDFMenuItem";
+            this.visualizaPDFMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.visualizaPDFMenuItem.Text = "Visualizador PDF";
+            this.visualizaPDFMenuItem.Click += new System.EventHandler(this.visualizaPDFMenuItem_Click);
+            // 
+            // visualizaImagemMenuItem
+            // 
+            this.visualizaImagemMenuItem.Name = "visualizaImagemMenuItem";
+            this.visualizaImagemMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.visualizaImagemMenuItem.Text = "Visualizador Imagem";
+            this.visualizaImagemMenuItem.Click += new System.EventHandler(this.visualizaImagemMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
@@ -238,152 +143,313 @@
             this.ajudaToolStripMenuItem,
             this.informaçõesToolStripMenuItem});
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(75, 50);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
             // 
             // informaçõesToolStripMenuItem
             // 
             this.informaçõesToolStripMenuItem.Name = "informaçõesToolStripMenuItem";
-            this.informaçõesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.informaçõesToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.informaçõesToolStripMenuItem.Text = "Informações";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(57, 50);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
-            // chkAcesso
+            // Aviso
             // 
-            this.chkAcesso.AutoSize = true;
-            this.chkAcesso.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAcesso.Location = new System.Drawing.Point(717, 32);
-            this.chkAcesso.Name = "chkAcesso";
-            this.chkAcesso.Size = new System.Drawing.Size(15, 14);
-            this.chkAcesso.TabIndex = 22;
-            this.chkAcesso.UseVisualStyleBackColor = true;
-            this.chkAcesso.UseWaitCursor = true;
+            this.Aviso.AutoSize = true;
+            this.Aviso.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Aviso.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
+            this.Aviso.ForeColor = System.Drawing.Color.Red;
+            this.Aviso.Location = new System.Drawing.Point(18, 582);
+            this.Aviso.Name = "Aviso";
+            this.Aviso.Size = new System.Drawing.Size(78, 24);
+            this.Aviso.TabIndex = 38;
+            this.Aviso.Text = "Avisos";
             // 
-            // chkCriacao
+            // contextMenuStrip1
             // 
-            this.chkCriacao.AutoSize = true;
-            this.chkCriacao.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCriacao.Location = new System.Drawing.Point(602, 32);
-            this.chkCriacao.Name = "chkCriacao";
-            this.chkCriacao.Size = new System.Drawing.Size(15, 14);
-            this.chkCriacao.TabIndex = 18;
-            this.chkCriacao.UseVisualStyleBackColor = true;
-            this.chkCriacao.UseWaitCursor = true;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dtm_acesso
+            // lblAlteracao
             // 
-            this.dtm_acesso.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtm_acesso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtm_acesso.Location = new System.Drawing.Point(623, 29);
-            this.dtm_acesso.Name = "dtm_acesso";
-            this.dtm_acesso.Size = new System.Drawing.Size(88, 20);
-            this.dtm_acesso.TabIndex = 21;
-            this.dtm_acesso.UseWaitCursor = true;
-            this.dtm_acesso.Value = new System.DateTime(2024, 9, 12, 8, 40, 8, 0);
+            this.lblAlteracao.BackColor = System.Drawing.Color.NavajoWhite;
+            this.lblAlteracao.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Italic);
+            this.lblAlteracao.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblAlteracao.Location = new System.Drawing.Point(229, 40);
+            this.lblAlteracao.Name = "lblAlteracao";
+            this.lblAlteracao.Size = new System.Drawing.Size(137, 26);
+            this.lblAlteracao.TabIndex = 43;
+            this.lblAlteracao.Text = "Alteração";
+            this.lblAlteracao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtm_criacao
+            // lblProf
             // 
-            this.dtm_criacao.CalendarFont = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtm_criacao.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtm_criacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtm_criacao.Location = new System.Drawing.Point(507, 30);
-            this.dtm_criacao.Name = "dtm_criacao";
-            this.dtm_criacao.Size = new System.Drawing.Size(89, 20);
-            this.dtm_criacao.TabIndex = 14;
-            this.dtm_criacao.UseWaitCursor = true;
-            this.dtm_criacao.Value = new System.DateTime(2024, 9, 12, 8, 40, 8, 0);
+            this.lblProf.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Italic);
+            this.lblProf.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblProf.Location = new System.Drawing.Point(256, 72);
+            this.lblProf.Name = "lblProf";
+            this.lblProf.Size = new System.Drawing.Size(112, 50);
+            this.lblProf.TabIndex = 46;
+            this.lblProf.Text = "Niveis";
+            this.lblProf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnDesfazer
+            // label3
             // 
-            this.btnDesfazer.Font = new System.Drawing.Font("Verdana", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesfazer.Location = new System.Drawing.Point(330, 27);
-            this.btnDesfazer.Name = "btnDesfazer";
-            this.btnDesfazer.Size = new System.Drawing.Size(22, 23);
-            this.btnDesfazer.TabIndex = 34;
-            this.btnDesfazer.Text = "X";
-            this.btnDesfazer.UseVisualStyleBackColor = true;
-            this.btnDesfazer.UseWaitCursor = true;
-            this.btnDesfazer.Click += new System.EventHandler(this.btnRetorno_Click);
+            this.label3.BackColor = System.Drawing.Color.NavajoWhite;
+            this.label3.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Italic);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label3.Location = new System.Drawing.Point(244, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 20);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Criação";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TxbFiltroNome
+            // 
+            this.TxbFiltroNome.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TxbFiltroNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxbFiltroNome.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.TxbFiltroNome.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TxbFiltroNome.Location = new System.Drawing.Point(4, 15);
+            this.TxbFiltroNome.Margin = new System.Windows.Forms.Padding(2);
+            this.TxbFiltroNome.Name = "TxbFiltroNome";
+            this.TxbFiltroNome.Size = new System.Drawing.Size(203, 28);
+            this.TxbFiltroNome.TabIndex = 9;
+            this.TxbFiltroNome.Text = "Filtro Nome Arquivo";
+            this.TxbFiltroNome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxbFiltroNome_MouseClick);
+            this.TxbFiltroNome.TextChanged += new System.EventHandler(this.TxbFiltroNome_TextChanged);
+            // 
+            // TxbFiltroTexto
+            // 
+            this.TxbFiltroTexto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TxbFiltroTexto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxbFiltroTexto.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.TxbFiltroTexto.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TxbFiltroTexto.Location = new System.Drawing.Point(4, 59);
+            this.TxbFiltroTexto.Margin = new System.Windows.Forms.Padding(2);
+            this.TxbFiltroTexto.Name = "TxbFiltroTexto";
+            this.TxbFiltroTexto.Size = new System.Drawing.Size(203, 28);
+            this.TxbFiltroTexto.TabIndex = 27;
+            this.TxbFiltroTexto.Text = "Texto a ser Buscado";
+            this.TxbFiltroTexto.Click += new System.EventHandler(this.TxbFiltroTexto_Click);
+            // 
+            // TxbPastaBase
+            // 
+            this.TxbPastaBase.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TxbPastaBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxbPastaBase.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.TxbPastaBase.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TxbPastaBase.Location = new System.Drawing.Point(18, 49);
+            this.TxbPastaBase.Margin = new System.Windows.Forms.Padding(2);
+            this.TxbPastaBase.MaxLength = 100;
+            this.TxbPastaBase.Name = "TxbPastaBase";
+            this.TxbPastaBase.Size = new System.Drawing.Size(311, 28);
+            this.TxbPastaBase.TabIndex = 1;
+            this.TxbPastaBase.Text = "C:\\";
+            this.TxbPastaBase.Leave += new System.EventHandler(this.TxbPastaBase_Leave);
+            this.TxbPastaBase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TxbPastaBase_MouseDown);
+            // 
+            // NumProf
+            // 
+            this.NumProf.Font = new System.Drawing.Font("Verdana", 8F);
+            this.NumProf.Location = new System.Drawing.Point(227, 89);
+            this.NumProf.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.NumProf.Name = "NumProf";
+            this.NumProf.Size = new System.Drawing.Size(57, 27);
+            this.NumProf.TabIndex = 29;
+            this.NumProf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NumProf.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // BtnBuscaTexto
+            // 
+            this.BtnBuscaTexto.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtnBuscaTexto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnBuscaTexto.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.BtnBuscaTexto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BtnBuscaTexto.FlatAppearance.BorderSize = 3;
+            this.BtnBuscaTexto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.BtnBuscaTexto.Font = new System.Drawing.Font("Verdana", 6F);
+            this.BtnBuscaTexto.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnBuscaTexto.Location = new System.Drawing.Point(347, 42);
+            this.BtnBuscaTexto.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnBuscaTexto.Name = "BtnBuscaTexto";
+            this.BtnBuscaTexto.Size = new System.Drawing.Size(68, 68);
+            this.BtnBuscaTexto.TabIndex = 1;
+            this.BtnBuscaTexto.Text = "BUSCA TEXTO";
+            this.BtnBuscaTexto.UseMnemonic = false;
+            this.BtnBuscaTexto.UseVisualStyleBackColor = false;
+            this.BtnBuscaTexto.Click += new System.EventHandler(this.BtnBuscaTexto_Click);
+            // 
+            // btnRetorno
+            // 
+            this.btnRetorno.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnRetorno.Location = new System.Drawing.Point(18, 86);
+            this.btnRetorno.Name = "btnRetorno";
+            this.btnRetorno.Size = new System.Drawing.Size(39, 28);
+            this.btnRetorno.TabIndex = 34;
+            this.btnRetorno.Text = "<-";
+            this.btnRetorno.UseVisualStyleBackColor = true;
+            this.btnRetorno.Visible = false;
+            this.btnRetorno.Click += new System.EventHandler(this.btnRetorno_Click);
+            // 
+            // DtmAcesso
+            // 
+            this.DtmAcesso.Font = new System.Drawing.Font("Verdana", 8F);
+            this.DtmAcesso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtmAcesso.Location = new System.Drawing.Point(247, 60);
+            this.DtmAcesso.Name = "DtmAcesso";
+            this.DtmAcesso.Size = new System.Drawing.Size(119, 27);
+            this.DtmAcesso.TabIndex = 21;
+            this.DtmAcesso.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            // 
+            // DtmCriacao
+            // 
+            this.DtmCriacao.CalendarFont = new System.Drawing.Font("Verdana", 8F);
+            this.DtmCriacao.Font = new System.Drawing.Font("Verdana", 8F);
+            this.DtmCriacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtmCriacao.Location = new System.Drawing.Point(247, 15);
+            this.DtmCriacao.Name = "DtmCriacao";
+            this.DtmCriacao.Size = new System.Drawing.Size(119, 27);
+            this.DtmCriacao.TabIndex = 14;
+            this.DtmCriacao.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel1.Controls.Add(this.btnResetNome);
+            this.panel1.Controls.Add(this.btnResetConteudo);
+            this.panel1.Controls.Add(this.DtmCriacao);
+            this.panel1.Controls.Add(this.DtmAcesso);
+            this.panel1.Controls.Add(this.TxbFiltroTexto);
+            this.panel1.Controls.Add(this.TxbFiltroNome);
+            this.panel1.Controls.Add(this.lblAlteracao);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(509, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(389, 95);
+            this.panel1.TabIndex = 47;
+            // 
+            // btnResetNome
+            // 
+            this.btnResetNome.Location = new System.Drawing.Point(212, 15);
+            this.btnResetNome.Name = "btnResetNome";
+            this.btnResetNome.Size = new System.Drawing.Size(25, 26);
+            this.btnResetNome.TabIndex = 51;
+            this.btnResetNome.Text = "X";
+            this.btnResetNome.UseVisualStyleBackColor = true;
+            this.btnResetNome.Click += new System.EventHandler(this.btnResetNome_Click);
+            // 
+            // btnResetConteudo
+            // 
+            this.btnResetConteudo.Location = new System.Drawing.Point(212, 59);
+            this.btnResetConteudo.Name = "btnResetConteudo";
+            this.btnResetConteudo.Size = new System.Drawing.Size(25, 26);
+            this.btnResetConteudo.TabIndex = 50;
+            this.btnResetConteudo.Text = "X";
+            this.btnResetConteudo.UseVisualStyleBackColor = true;
+            this.btnResetConteudo.Click += new System.EventHandler(this.btnResetConteudo_Click);
+            // 
+            // process1
+            // 
+            this.process1.StartInfo.Domain = "";
+            this.process1.StartInfo.LoadUserProfile = false;
+            this.process1.StartInfo.Password = null;
+            this.process1.StartInfo.StandardErrorEncoding = null;
+            this.process1.StartInfo.StandardOutputEncoding = null;
+            this.process1.StartInfo.UserName = "";
+            this.process1.SynchronizingObject = this;
             // 
             // FrmBusca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(1156, 437);
-            this.Controls.Add(this.btnDesfazer);
-            this.Controls.Add(this.lblProf);
-            this.Controls.Add(this.btnBuscaTexto);
-            this.Controls.Add(this.numProf);
-            this.Controls.Add(this.lsbMostraArquivos);
-            this.Controls.Add(this.dtm_criacao);
-            this.Controls.Add(this.dtm_acesso);
-            this.Controls.Add(this.txb_textoBusca);
+            this.ClientSize = new System.Drawing.Size(916, 615);
+            this.Controls.Add(this.BtnBuscaTexto);
+            this.Controls.Add(this.NumProf);
+            this.Controls.Add(this.Aviso);
             this.Controls.Add(this.lsbMostraDir);
-            this.Controls.Add(this.chkAcesso);
-            this.Controls.Add(this.chkCriacao);
-            this.Controls.Add(this.lbl_arquivos_filtrados);
-            this.Controls.Add(this.lbl_arquivos);
-            this.Controls.Add(this.TxtEscolheDir);
-            this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.Menu1);
+            this.Controls.Add(this.btnRetorno);
+            this.Controls.Add(this.TxbPastaBase);
+            this.Controls.Add(this.lblProf);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Verdana", 8F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.Menu1;
             this.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.MaximumSize = new System.Drawing.Size(2000, 1200);
             this.Name = "FrmBusca";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCA FÁCIL";
-            this.UseWaitCursor = true;
-            this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.numProf)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmBusca_Load);
+            this.Shown += new System.EventHandler(this.FrmBusca_Shown);
+            this.Menu1.ResumeLayout(false);
+            this.Menu1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumProf)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl_arquivos;
-        private System.Windows.Forms.Label lbl_arquivos_filtrados;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.TextBox TxtEscolheDir;
-        private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.TextBox txb_textoBusca;
-        private System.Windows.Forms.Button btnBuscaTexto;
-        private System.Windows.Forms.NumericUpDown numProf;
-        private System.Windows.Forms.Label lblProf;
-        private System.Windows.Forms.ListBox lsbMostraDir;
-        private System.Windows.Forms.ListBox lsbMostraArquivos;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ListBox lsbMostraDir;
+        private System.Windows.Forms.MenuStrip Menu1;
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editorToolStripMenuItem;
-        private System.Windows.Forms.CheckBox chkAcesso;
-        private System.Windows.Forms.CheckBox chkCriacao;
-        private System.Windows.Forms.DateTimePicker dtm_acesso;
-        private System.Windows.Forms.DateTimePicker dtm_criacao;
-        private System.Windows.Forms.Button btnDesfazer;
+        private System.Windows.Forms.ToolStripMenuItem editorTxtMenuItem;
+        private System.Windows.Forms.Label Aviso;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lblAlteracao;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblProf;
+        private System.Windows.Forms.TextBox TxbFiltroNome;
+        private System.Windows.Forms.TextBox TxbFiltroTexto;
+        private System.Windows.Forms.TextBox TxbPastaBase;
+        private System.Windows.Forms.NumericUpDown NumProf;
+        private System.Windows.Forms.Button BtnBuscaTexto;
+        private System.Windows.Forms.Button btnRetorno;
+        private System.Windows.Forms.DateTimePicker DtmAcesso;
+        private System.Windows.Forms.DateTimePicker DtmCriacao;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnResetNome;
+        private System.Windows.Forms.Button btnResetConteudo;
+        private System.Diagnostics.Process process1;
+        private System.Windows.Forms.ToolStripMenuItem editorDocMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editorXlsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizaPDFMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizaImagemMenuItem;
     }
 }
 

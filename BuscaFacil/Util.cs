@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Net.NetworkInformation;
 
 
 // Classe Util vai conter todas as operacoes que sao de uso geral 

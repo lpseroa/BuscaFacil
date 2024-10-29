@@ -71,7 +71,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(372, 44);
+            this.lblTitulo.Size = new System.Drawing.Size(248, 29);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "O que deve ser Solicitado ";
             this.lblTitulo.UseCompatibleTextRendering = true;
@@ -86,6 +86,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnFecha);
             this.Controls.Add(this.btnOK);
+            this.MaximizeBox = false;
             this.Name = "InputBox";
             this.Text = "Digite os Dados Solicitados";
             this.ResumeLayout(false);

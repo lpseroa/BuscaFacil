@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbAjuda = new System.Windows.Forms.TextBox();
+            this.txbAjuda = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // txbAjuda
             // 
-            this.txbAjuda.Location = new System.Drawing.Point(21, 14);
-            this.txbAjuda.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txbAjuda.Multiline = true;
+            this.txbAjuda.Location = new System.Drawing.Point(26, 28);
             this.txbAjuda.Name = "txbAjuda";
-            this.txbAjuda.Size = new System.Drawing.Size(699, 353);
+            this.txbAjuda.Size = new System.Drawing.Size(987, 523);
             this.txbAjuda.TabIndex = 0;
+            this.txbAjuda.Text = "";
             // 
             // frmAjuda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 378);
+            this.ClientSize = new System.Drawing.Size(1036, 570);
             this.Controls.Add(this.txbAjuda);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -52,12 +51,11 @@
             this.Text = "Ajuda";
             this.Load += new System.EventHandler(this.frmAjuda_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txbAjuda;
+        private System.Windows.Forms.RichTextBox txbAjuda;
     }
 }

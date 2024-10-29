@@ -8,112 +8,103 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 
+//==========================================================================================
+//  Classe que executa as tarefas referentes a configuracao
+//  Configuracao          -> Construtor Padrao
+//  
+//  AtualizaArquivoConfig -> Escreve algum conteudo no arquivo de configuracao e atualiza dicionario
+//  GetCaminhoConfig      -> Retorna endereço do arquivo de configuracao
+//  GetValor              -> Retorna um valor de configuração a partir de uma chave
+//  LeConfiguracao        -> Le a configuração do arquivo de configuração e armnazena do no dicionario
+// 
+//==========================================================================================
+
 namespace BuscaFacil
 {
     namespace BuscaFacil
     {
         public class Configuracao
         {
-            public Configuracao() { }                           // construtur padrao da classe
-            private const string caminhoArqConfig = "centopeia.cfg";     // Caminho do arquivo de configuração
+            public Configuracao() { }                                   // construtur padrao da classe
 
-            // dicionario que guarda todos as configurações lidas 
+            private const string caminhoArqConfig = "buscafacil.cfg";    // Arquivo de Configuracao
+
+            // dicionario privado que guarda todos as configurações lidas 
             private static Dictionary<string, string> configValues = new Dictionary<string, string>();
 
 
-            // 
-            public static int SalvaDado(string nome, string valor)
+            // Atualiza o  arquivo de configuraçao
+            // Se o arquivo de configuracao,
+            //   nao exista cria o arquivo com o conteudo solicitado 
+            //   exista e a chave nao estiver sendo utilizada acrescenta conteudo ao mesmo 
+            //   caso exista e a chave ja estiver armazenado troca o valor
+            // Ao final faz a leitura da configuracao atualizando o dicionario
+            public static void AtualizaArquivoConfig(string chave, string valor)
             {
-                string total = nome + "=" + valor;
-                EscreveNoArquivo(total);
-                MessageBox.Show("Configuração salva com sucesso!");
-                return 0;
-            }
+                string chaveValor = chave + "=" + valor;
 
-            // Se o arquivo de configuracao existe, se ja existe adiciona o conteudo
-            //  caso nao exista cria o arquivo com o conteudo solicitado 
-            // caso exista acrescenta conteudo ao mesmo 
-            static void EscreveNoArquivo(string conteudo)
-            {
-                // Verifica se o arquivo já existe
+
+                // Se o arquivo nao existe cria e insere chaveValor
+
                 if (!File.Exists(caminhoArqConfig))
                 {
                     // Cria o arquivo e escreve o conteúdo
                     using (StreamWriter writer = File.CreateText(caminhoArqConfig))
                     {
-                        MessageBox.Show("Arquivo de configuracao nao existe, criando " + conteudo); 
-                        writer.WriteLine(conteudo);
+                        //BuscaUtil.SetAviso ("Arquivo de configuracao nao existe, criando " + chaveValor);
+                        writer.WriteLine(chaveValor);
                     }
                 }
-                else
+                else  // se arquivo existe
                 {
-                    // Se o arquivo já existir, adiciona o conteúdo
-                    using (StreamWriter writer = File.AppendText(caminhoArqConfig))
+                    // verifica se sera necessario substituir o valor da chave 
+
+                    // Lê todas as linhas do arquivo
+                    List<string> linhas = new List<string>(); // Usando List para armazenar as linhas
+                    linhas.AddRange(File.ReadAllLines(caminhoArqConfig));
+
+
+                    File.Delete(caminhoArqConfig);
+
+                    // Verifica se a lista está vazia
+                    if (linhas == null || linhas.Count == 0)
                     {
-                        MessageBox.Show("Arquivo de configuracao existe, acrescentando " + conteudo);
-                        writer.WriteLine(conteudo);
+                       // MessageBox.Show("Erro: O arquivo {caminhoArqConfig} esta vazio.");
+                        //BuscaUtil.SetAviso("Erro: O arquivo {caminhoArqConfig} esta vazio.");
+                        return;
                     }
+
+                    // Substitui a linha que contém a string especificada
+                    for (int i = 0; i < linhas.Count; i++)
+                    {
+                        if (linhas[i].Contains(chave))
+                        {
+                            linhas[i] = chaveValor; // Substitui a linha
+                            break;
+                        } else { 
+                            linhas.Add(chaveValor);
+                        }
+                    }
+
+                    string[] arrLista = linhas.ToArray();
+
+                    Util.EscreveArquivoTexto(caminhoArqConfig, arrLista);
+
                 }
 
+               // MessageBox.Show("Configuração salva com sucesso!");
+                //BuscaUtil.SetAviso("Configuração salva com sucesso!");
                 Configuracao.LeConfiguracao();
             }
 
-            public static string GetUrl()
+ 
+            // Retorna endereço do arquivo de configuracao
+            public static string GetCaminhoConfig()
             {
                 return caminhoArqConfig;
             }
 
-            //
-            //
-            public static void SubstituiConfiguracao(string nomeConfig, string novaConfig)
-            {
-                string configTotal = nomeConfig + "=" + novaConfig;
-
-                // Verifica se o arquivo existe
-                if (!File.Exists(caminhoArqConfig))
-                {
-                    MessageBox.Show("Arquivo {caminhoArqConfig} não encontrado.");
-                    EscreveNoArquivo(configTotal);
-                    return;
-                }
-
-                // Lê todas as linhas do arquivo
-                List<string> linhas = new List<string>(); // Usando List para armazenar as linhas
-                linhas.AddRange(File.ReadAllLines(caminhoArqConfig));
-
-                // Verifica se a lista está vazia
-                if (linhas == null || linhas.Count == 0)
-                {
-                    MessageBox.Show("O arquivo {caminhoArqConfig} esta vazio.");
-                    return;
-                }
-
-                bool flgExiste = false;
-                // Substitui a linha que contém a string especificada
-                for (int i = 0; i < linhas.Count; i++)
-                {
-                    if (linhas[i].Contains(nomeConfig))
-                    {
-                        flgExiste = true;
-                        linhas[i] = configTotal; // Substitui a linha
-                        break;
-                    }
-                    if (!flgExiste)
-                    {
-                        linhas.Add(configTotal);
-                    }
-                }
-
-                string[] arrLista =  linhas.ToArray();
-
-
-                Util.EscreveArquivoTexto(caminhoArqConfig, arrLista);
-
-                Configuracao.LeConfiguracao();
-            }
-
-
-            // Pega um valor de configuração a partir de uma chave
+            // Retorna um valor de configuração a partir de uma chave
             public static string GetValor(string chave)
             {
                 LeConfiguracao();
@@ -121,18 +112,18 @@ namespace BuscaFacil
                 return valor;
             }
 
-
-
-            // le todos as chaves de configuração do arquivo de configuração e
-            // retorna 0 se a operação for concluida com exito 
+            // Le todos as chaves e valor de configuração do arquivo de configuração 
+            //  armazena no dicionario de configuracao 
+            //  retorna 0 se a operação for concluida com exito 
             public static int LeConfiguracao()
             {
-                string url = Configuracao.GetUrl();
+                string url = Configuracao.GetCaminhoConfig();
                 var resultado = Util.LerArquivoTexto(url);
 
                 if (!resultado.sucesso)
                 {
-                    MessageBox.Show("Falha na leitura do arquivo {url}");
+                    //MessageBox.Show("Falha na leitura do arquivo {url}");
+                    //BuscaUtil.SetAviso("Falha na leitura do arquivo {url}");
                 }
 
                 string[] lines = resultado.conteudo.ToArray();

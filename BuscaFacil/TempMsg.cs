@@ -1,34 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Timers;
 using System.Windows.Forms;
-
 
 namespace BuscaFacil
 {
-    public static class MessageBoxWithTimer
+    public partial class TempMsg : Form
     {
-        private static Form messageForm;
-        private static Label messageLabel;
-        private static Timer timer;
-
-
-        private static void OnTimedEvent(object sender, EventArgs e)
+        public TempMsg()
         {
-            {
-                // Para o timer e fecha o Form
-                timer.Stop();
-                messageForm.Close();
-            }
+            InitializeComponent();
         }
 
-        public static void Show(string message, int displayTimeInSeconds)
+        public static async void Show(string message, int time)
         {
-            // Configuração do Form
-            messageForm = new Form
+            // Criação do Form temporáriode forma fixa no centro da tela
+            Form tempForm = new Form
             {
                 StartPosition = FormStartPosition.CenterScreen,
                 Size = new System.Drawing.Size(300, 150),
@@ -36,28 +28,38 @@ namespace BuscaFacil
                 MaximizeBox = false
             };
 
-            // Configuração do Label
-            messageLabel = new Label
+            // Criação do Label para a mensagem com o parametro passado 
+            Label messageLabel = new Label
             {
                 Text = message,
                 Dock = DockStyle.Fill,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             };
-            messageForm.Controls.Add(messageLabel);
 
-            // Configuração do Timer
-            timer = new Timer
-            {
-                Interval = displayTimeInSeconds * 1000 // Convertendo para milissegundos
-            };
-            //timer.Tick += OnTimedEvent; // Associando o evento Tick
-            timer.Tick += OnTimedEvent; // Associando o evento Tick
-            timer.Start(); // Inicia o timer
+            tempForm.Controls.Add(messageLabel);        // adiçao da label ao form
 
-            // Exibe o formulário
-            messageForm.Show();
+            //// Criação do Timer
+            //Timer timer = new Timer
+            //{
+            //    Interval = time
+            //};
+
+            //timer.Tick += (s, e) =>
+            //{
+            //    timer.Stop(); // Para o timer
+            //    tempForm.Close(); // Fecha o Form
+            //};
+
+            //timer.Start(); // Inicia o timer
+
+            //// Exibe o Form
+            //tempForm.Show();
+
+
+            tempForm.Show();
+            await Task.Delay(time);
+            tempForm.Close();
 
         }
-
     }
 }

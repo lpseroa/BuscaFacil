@@ -1,0 +1,3 @@
+
++ Verificar se os editores configurados estao sendo o que sao chamados
++ Rodar as Buscas em paralelo
