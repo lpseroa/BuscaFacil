@@ -1,0 +1,10 @@
+C:\Code\BuscaFacil\BuscaFacil\bin\Release\BuscaFacil.exe.config
+C:\Code\BuscaFacil\BuscaFacil\bin\Release\BuscaFacil.exe
+C:\Code\BuscaFacil\BuscaFacil\bin\Release\BuscaFacil.pdb
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.csproj.AssemblyReference.cache
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.frm_Principal.resources
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.Properties.Resources.resources
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.csproj.GenerateResource.cache
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.csproj.CoreCompileInputs.cache
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.exe
+C:\Code\BuscaFacil\BuscaFacil\obj\Release\BuscaFacil.pdb

@@ -1,0 +1,13 @@
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\bin\Debug\BuscaFacil.exe.config
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\bin\Debug\BuscaFacil.exe
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\bin\Debug\BuscaFacil.pdb
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.csproj.AssemblyReference.cache
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.frmAjuda.resources
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.InputBox.resources
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.FrmBusca.resources
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.Properties.Resources.resources
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.csproj.GenerateResource.cache
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.csproj.CoreCompileInputs.cache
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.exe
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.pdb
+C:\Code\LupaGithub\BuscaFacil\BuscaFacil\obj\Debug\BuscaFacil.csproj.ResolveComReference.cache
